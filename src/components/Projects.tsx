@@ -43,11 +43,13 @@ function ProjectCard(props: { project: Project }) {
                 {project.description}
               </pre>
             </div>
-            <div class="flex gap-2">
+            <div class="flex gap-2 pt-2 flex-wrap">
               <For each={project.technologies}>
                 {tech => (
-                  <div class="bg-gray-200 dark:bg-gray-800 p-1 md:px-4 rounded text-sm">
-                    {tech}
+                  <div class="bg-[#3f4045] p-1 px-2 md:px-4 text-sm rounded-xl">
+                    <pre>
+                      <span class="text-gray-500 mr-0.5">#</span>{tech}
+                    </pre>
                   </div>
                 )}
               </For>

@@ -3,6 +3,7 @@ import { Container } from "./Container"
 import { AiFillGithub, AiFillLinkedin } from 'solid-icons/ai'
 import { IoMail } from 'solid-icons/io'
 import { Animate } from "./Animate";
+import { createSignal } from "solid-js";
 
 export function Contact() {
   return (
@@ -88,12 +89,30 @@ function Socials() {
 }
 
 function ContactForm() {
+  const [isLoading, setIsLoading] = createSignal<boolean>(false);
+
+
   const handleSubmit = (e: Event) => {
     e.preventDefault();
-    const formData = new FormData(e.target as (HTMLFormElement | undefined));
-    const formObject = Object.fromEntries(formData);
-    const formJSON = JSON.stringify(formObject);
-    console.log(formJSON);
+
+    const form = e.target as (HTMLFormElement | undefined);
+
+    const formData = new FormData(form);
+    formData.set("date", (new Date()).toDateString())
+
+    setIsLoading(true);
+
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxNhcHCtarNOEDtg_z9xxhWjDlnQxLZltNrf-XqhNLQ7GY7wza8wGe3CDnrdLpj4J3a/exec";
+    fetch(scriptURL, { method: "POST", body: formData })
+      .then(() => {
+        showToastFn({ message: "Message sent", type: "Success" });
+      })
+      .catch(() => {
+        showToastFn({ message: "Something went wrong. Please try again.", type: "Error" })
+      }).finally(() => {
+        form?.reset();
+        setIsLoading(false);
+      });
   }
 
   return (
@@ -108,7 +127,9 @@ function ContactForm() {
             <span class="text-sm text-gray-400 font-semibold">Name</span>
           </div>
           <input type="text" placeholder="John Doe" class="py-1 h-1/2 w-full outline-none" required
-            name="name" />
+            name="name"
+            disabled={isLoading()}
+          />
         </label>
 
         <label class="w-full flex flex-col items-start px-4 py-2 space-y-0 h-max 
@@ -117,7 +138,10 @@ function ContactForm() {
             <span class="text-sm text-gray-400 font-semibold">Email</span>
           </div>
           <input type="email" placeholder="mail@site.com" class="py-1 h-1/2 w-full outline-none" required
-            name="email" />
+            name="email"
+
+            disabled={isLoading()}
+          />
 
         </label>
 
@@ -130,12 +154,21 @@ function ContactForm() {
             rows={6}
             placeholder="your message ..."
             class="py-1 w-full outline-none field-sizing-content min-h-28"
-            required name="message" />
+            required name="message"
+            disabled={isLoading()}
+          />
         </label>
 
         <button class="daisy-btn daisy-btn-lg w-full bg-[#272729] rounded-xl border-none mt-4
-          font-normal text-orange-200/80" type="submit">
-          Send Message
+          font-normal text-orange-200/80" type="submit"
+          disabled={isLoading()}
+        >
+          {isLoading() ?
+            <>
+              Sending <span class="daisy-loading daisy-loading-ring daisy-loading-md ml-2"></span>
+            </> :
+            "Send Message"
+          }
         </button>
       </div>
     </form>
