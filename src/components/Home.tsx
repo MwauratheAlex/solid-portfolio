@@ -10,7 +10,10 @@ export function Home() {
   return (
     <div class="py-2 text-gray-400 px-4 overflow-hidden">
       <Container>
-        <div class='grid grid-cols-1 md:grid-cols-3 gap-4 md:w-4xl mx-auto'>
+        <Animate class='grid grid-cols-1 md:grid-cols-3 gap-4 md:w-4xl mx-auto'
+          initial="scale-90"
+          final="scale-100"
+        >
 
           {/*paragraph*/}
           <Animate class='w-full max-w-screen md:col-span-2 min-h-44 py-2 rounded-xl bg-[#18181a] flex justify-center items-center px-4
@@ -28,8 +31,9 @@ export function Home() {
           </Animate>
 
           {/* education */}
-          <Animate class='w-full row-span-2 rounded-xl bg-[#18181a]/10 border border-gray-900 md:order-2 order-5 p-4 
-            flex justify-center items-center px-8 duration-500'
+          <Animate class='w-full row-span-2 rounded-xl bg-[#18181a] md:bg-transparent border 
+            border-gray-900 md:order-2 order-5 p-4 
+            flex justify-center items-center px-4 md:px-8 duration-500'
             initial="-translate-y-10 opacity-0"
             final="translate-y-0 opacity-100"
           >
@@ -42,8 +46,9 @@ export function Home() {
           </Animate>
 
           {/* Experience */}
-          <Animate class='w-full row-span-2 rounded-xl bg-[#18181a]/10 border border-gray-900 md:order-3 order-4 p-4
-            flex justify-center items-center px-8 duration-500 max-w-screen'
+          <Animate class='w-full row-span-2 rounded-xl bg-[#18181a] border 
+            border-gray-900 md:order-3 order-4 p-4 md:bg-transparent
+            flex justify-center items-center px-4 md:px-8 duration-500 max-w-screen'
             initial="translate-y-10 opacity-0"
             final="translate-y-0 opacity-100"
           >
@@ -54,10 +59,8 @@ export function Home() {
           </Animate>
 
           {/*name*/}
-          <Animate class='w-full md:aspect-square justify-center rounded-xl
+          <div class='w-full md:aspect-square justify-center rounded-xl
              bg-[#18181a] flex flex-col p-4 md:items-center md:order-4 order-1'
-            initial="scale-95"
-            final="scale-100"
           >
             <span class='space-y-2 md:w-min'>
               <div class='font-semibold text-lg md:text-2xl'>
@@ -71,7 +74,7 @@ export function Home() {
                 </pre>
               </div>
             </span>
-          </Animate>
+          </div>
 
           {/*tech stack*/}
           <Animate class='w-full md:col-span-2 h-44 rounded-xl bg-[#18181a] flex items-center justify-center
@@ -95,7 +98,7 @@ export function Home() {
             </div>
           </Animate>
 
-        </div>
+        </Animate>
       </Container>
     </div>
   );

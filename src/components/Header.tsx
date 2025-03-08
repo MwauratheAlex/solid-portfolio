@@ -4,7 +4,7 @@ import { selectedPage, setSelectedPage } from "../stores/store";
 export function Header() {
   return (
     <div class='flex items-center justify-center py-4 sticky top-0 z-50 backdrop-blur-lg bg-black/50 px-4'>
-      <div class="bg-[#272729] w-full md:min-w-xs max-w-xs flex justify-between p-1.5 rounded-xl">
+      <div class="bg-[#272729] w-full md:min-w-xs md:max-w-xs flex justify-between p-1.5 rounded-xl">
         <HeaderButton text="Home" idx={0} />
         <HeaderButton text="Projects" idx={1} />
         <HeaderButton text="Contact" idx={2} />

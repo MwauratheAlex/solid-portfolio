@@ -21,7 +21,13 @@ const App: Component = () => {
 function Toast() {
   return (
     <div class="daisy-toast daisy-toast-top daisy-toast-end z-[999]">
-      <div class="daisy-alert daisy-alert-success">
+      <div
+        class="daisy-alert"
+        classList={{
+          "daisy-alert-error": toastInfo().type === "Error",
+          "daisy-alert-success": toastInfo().type === "Success",
+        }}
+      >
         <span>{toastInfo().message}</span>
       </div>
     </div>

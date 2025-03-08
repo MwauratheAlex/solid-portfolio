@@ -9,7 +9,7 @@ import { Animate } from "./Animate";
 
 export function Projects() {
   return (
-    <div class="pb-4">
+    <div class="pb-4 px-4">
       <Container>
         <div class="space-y-6">
           <For each={PROJECTS}>
@@ -28,23 +28,27 @@ function ProjectCard(props: { project: Project }) {
 
   return (
     <div class={`flex gap-4 overflow-hidden`}>
-      <div class="flex-1/2 h-80 rounded-lg overflow-hidden">
+      <div class="flex-1/2 h-80 rounded-lg overflow-hidden hidden md:block">
         <img src={project.img} class="object-cover h-full w-full opacity-[98%]" />
       </div>
-      <div class="flex-1/2 flex flex-col gap-4">
+      <div class="flex-1/2 flex flex-col gap-4 w-full">
         <Animate class="grow" initial="translate-y-10 opacity-0" final="translate-0 opacity-100">
-          <div class="px-8 h-full py-4 space-y-2 flex flex-col justify-center  bg-[#18181a]
+          <div class="px-4 md:px-8 h-full py-4 space-y-2 flex flex-col justify-center  bg-[#18181a]
          rounded-2xl ">
-            <div class="font-semibold text-2xl">
+            <div class="font-semibold text-xl md:text-2xl">
               <pre class="text-orange-200">{project.title}</pre>
             </div>
             <div>
-              <pre class="whitespace-pre-wrap text-gray-200 tracking-wide">{project.description}</pre>
+              <pre class="whitespace-pre-wrap text-gray-200 tracking-wide">
+                {project.description}
+              </pre>
             </div>
             <div class="flex gap-2">
               <For each={project.technologies}>
                 {tech => (
-                  <div class="bg-gray-200 dark:bg-gray-800 px-4 rounded text-sm"> <span class="text-gray-500">#</span> {tech}</div>
+                  <div class="bg-gray-200 dark:bg-gray-800 p-1 md:px-4 rounded text-sm">
+                    {tech}
+                  </div>
                 )}
               </For>
             </div>
