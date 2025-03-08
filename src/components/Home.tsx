@@ -32,7 +32,7 @@ export function Home() {
 
           {/* education */}
           <Animate class='w-full row-span-2 rounded-xl bg-[#18181a] md:bg-transparent border 
-            border-gray-900 md:order-2 order-5 p-4 
+            border-orange-200/20 md:order-2 order-5 p-4 
             flex justify-center items-center px-4 md:px-8 duration-500'
             initial="translate-y-10 opacity-0"
             final="translate-y-0 opacity-100"
@@ -47,7 +47,7 @@ export function Home() {
 
           {/* Experience */}
           <Animate class='w-full row-span-2 rounded-xl bg-[#18181a] border 
-            border-gray-900 md:order-3 order-4 p-4 md:bg-transparent
+            border-orange-200/10 md:order-3 order-4 p-4 md:bg-transparent
             flex justify-center items-center px-4 md:px-8 duration-500 max-w-screen'
             initial="-translate-y-10 opacity-0"
             final="translate-y-0 opacity-100"
