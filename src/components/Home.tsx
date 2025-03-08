@@ -38,7 +38,7 @@ export function Home() {
             final="translate-y-0 opacity-100"
           >
             <div class="w-full">
-              <pre class="font-semibold text-xl text-gray-400 md:text-gray-500 tracking-wide py-2">
+              <pre class="font-semibold text-xl text-gray-400 tracking-wide py-2">
                 Education
               </pre>
               <Education />
@@ -53,7 +53,7 @@ export function Home() {
             final="translate-y-0 opacity-100"
           >
             <div class="w-full">
-              <pre class="font-semibold text-xl tracking-wide text-gray-400 md:text-gray-500 py-2">Experience</pre>
+              <pre class="font-semibold text-xl tracking-wide text-gray-400 py-2">Experience</pre>
               <Experience />
             </div>
           </Animate>
@@ -155,7 +155,7 @@ function TimelineItem(props: { title: string, subtitle: string, children?: JSXEl
         <AiFillCheckCircle size={20} class="fill-orange-300/30" />
       </div>
       <div class="daisy-timeline-end md:mb-4">
-        <div class="font-mono text-nowrap italic  text-gray-400 md:text-gray-500">{props.title}</div>
+        <div class="font-mono text-nowrap italic  text-gray-400">{props.title}</div>
         <div class="text-base font-semibold w-52">{props.subtitle}</div>
         {props.children}
       </div>
