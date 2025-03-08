@@ -32,7 +32,7 @@ export function Home() {
 
           {/* education */}
           <Animate class='w-full row-span-2 rounded-xl bg-[#18181a] md:bg-transparent border 
-            border-orange-200/20 md:order-2 order-5 p-4 
+            border-orange-200/10 md:order-2 order-5 p-4 
             flex justify-center items-center px-4 md:px-8 duration-500'
             initial="translate-y-10 opacity-0"
             final="translate-y-0 opacity-100"
