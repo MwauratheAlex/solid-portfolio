@@ -43,22 +43,6 @@ export const PROJECTS: Project[] = [
     technologies: ["Go", "HTML", "CSS", "HTMX", "JavaScript"],
   },
   {
-    title: "NFT Marketplace App",
-    git: "https://github.com/MwauratheAlex/NFTMarketplace.git",
-    liveLink: "https://nftmarketplaceshowcase.on.fleek.co/",
-    description: "A cross-platform React Native Application. Users can see and search through listed NFTs and scroll through them. The NFT details page allows users to see more information about a specific NFT and see all it's active bids.",
-    img: nftmarketplace,
-    technologies: ["ReactNative", "JavaScript"],
-  },
-  {
-    title: "NFT Marketplace Showcase",
-    git: "https://github.com/MwauratheAlex/NFTMarketplaceShowcase.git",
-    liveLink: "https://nftmarketplaceshowcase.on.fleek.co/",
-    description: "A landing page for the NFT Marketplace Application. All details about the app are shared in this smooth single page website, together with the download link as well as all the app features. The page is hosted on IPFS, a completely decentralized peer-to-peer protocol.",
-    img: nftshowcase,
-    technologies: ["React", "JavaScript"],
-  },
-  {
     title: "Startup Landing Page",
     git: "https://github.com/MwauratheAlex/nextjs_landing_page.git",
     liveLink: "https://business-landing-page-mwaura.netlify.app/",
@@ -73,14 +57,6 @@ export const PROJECTS: Project[] = [
     description: "A fully responsive GPT-3 website/landing page with modern UI/UX following a Figma design built with React.",
     img: gpt3,
     technologies: ["React", "JavaScript", "Figma"],
-  },
-  {
-    title: "Just Gym It",
-    git: "https://github.com/MwauratheAlex/gym_exercises.git",
-    liveLink: "https://justgymit.netlify.app/",
-    description: "A modern React 18 Fitness Exercises App with the functionality to choose exercise categories and specific muscle groups. Browse 1000+ exercises with practical examples.",
-    img: justgymit,
-    technologies: ["React", "JavaScript", "Api"],
   },
   {
     title: "MovieLand",
