@@ -31,8 +31,8 @@ export function Home() {
           </Animate>
 
           {/* education */}
-          <Animate class='w-full row-span-2 rounded-xl bg-[#18181a] border 
-            border-orange-200/10 md:order-2 order-5 p-4 
+          <Animate class='w-full row-span-2 rounded-xl bg-[#18181a] 
+            md:order-2 order-5 p-4 
             flex justify-center items-center px-4 md:px-8 duration-500'
             initial="translate-y-10 opacity-0"
             final="translate-y-0 opacity-100"
@@ -46,8 +46,8 @@ export function Home() {
           </Animate>
 
           {/* Experience */}
-          <Animate class='w-full row-span-2 rounded-xl bg-[#18181a] border 
-            border-orange-200/10 md:order-3 order-4 p-4
+          <Animate class='w-full row-span-2 rounded-xl bg-[#18181a] 
+            md:order-3 order-4 p-4
             flex justify-center items-center px-4 md:px-8 duration-500 max-w-screen'
             initial="-translate-y-10 opacity-0"
             final="translate-y-0 opacity-100"
@@ -86,11 +86,11 @@ export function Home() {
               <pre class='font-semibold text-xl tracking-wide text-gray-400'>
                 Technologies
               </pre>
-              <div class='flex justify-between flex-wrap items-center gap-2 md:gap-4 py-2 mt-2'>
+              <div class='flex justify-start flex-wrap items-center gap-2 md:gap-4 py-2 mt-2'>
                 <For each={TECHNOLOGIES}>
                   {tech => (
-                    <div class='daisy-btn daisy-btn-square grow bg-transparent daisy-tooltip' data-tip={tech.name}>
-                      <tech.icon class={cn(tech.color, "opacity-80 size-8")} />
+                    <div class='daisy-btn daisy-btn-square bg-transparent daisy-tooltip' data-tip={tech.name}>
+                      <tech.icon class={cn(tech.color, "opacity-80 size-6")} />
                     </div>
                   )}
                 </For>
@@ -123,21 +123,21 @@ function Education() {
       <TimelineItem title="ALX Africa (2024)" subtitle="Software Engineering" start>
         <ul class="daisy-list gap-2 mt-2">
           <li class="daisy-list-row py-1 flex gap-1 pl-2">
-            <SiTablecheck size={20} class="p-1 fill-orange-200/20" />
-            <div class="">
+            <SiTablecheck size={20} class="p-1 fill-[#3e515d66]" />
+            <div class="text-nowrap">
               Systems Engineering/Devops
             </div>
           </li>
           <li class="daisy-list-row py-1 flex gap-1 pl-2">
-            <SiTablecheck size={20} class="p-1 fill-orange-200/20" />
+            <SiTablecheck size={20} class="p-1 fill-[#3e515d66]" />
             Low level programming
           </li>
           <li class="daisy-list-row py-1 flex gap-1 pl-2">
-            <SiTablecheck size={20} class="p-1 fill-orange-200/20" />
+            <SiTablecheck size={20} class="p-1 fill-[#3e515d66]" />
             High level programming
           </li>
           <li class="daisy-list-row py-1 flex gap-1 pl-2">
-            <SiTablecheck size={20} class="p-1 fill-orange-200/20" />
+            <SiTablecheck size={20} class="p-1 fill-[#3e515d66]" />
             Linux
           </li>
         </ul>
@@ -150,16 +150,16 @@ function Education() {
 function TimelineItem(props: { title: string, subtitle: string, children?: JSXElement, start?: boolean, end?: boolean }) {
   return (
     <li class="w-min">
-      {!props.start && <hr class="bg-orange-200/20" />}
+      {!props.start && <hr class="bg-[#3e515d44]" />}
       <div class="daisy-timeline-middle">
-        <AiFillCheckCircle size={20} class="fill-orange-300/30" />
+        <AiFillCheckCircle size={20} class="fill-[#3e515d88]" />
       </div>
       <div class="daisy-timeline-end md:mb-4">
-        <div class="font-mono text-nowrap italic  text-gray-400">{props.title}</div>
+        <div class="font-mono text-nowrap text-gray-400">{props.title}</div>
         <div class="text-base font-semibold w-52">{props.subtitle}</div>
         {props.children}
       </div>
-      {!props.end && <hr class="bg-orange-200/20" />}
+      {!props.end && <hr class="bg-[#3e515d44]" />}
     </li>);
 }
 

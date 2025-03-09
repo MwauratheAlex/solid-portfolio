@@ -24,14 +24,6 @@ function Socials() {
 
   const email = "mwaurambugua12@gmail.com"
 
-  const copyEmailToClipbard = async () => {
-    try {
-      await navigator.clipboard.writeText(email)
-      showToastFn({ message: "Email copied to clipboard", type: "Success" })
-    } catch (err) {
-      showToastFn({ message: "Failed to copy", type: "Error" })
-    }
-  }
   return (
     <Animate
       initial="-translate-x-10 opacity-0"
@@ -40,22 +32,21 @@ function Socials() {
       <div
         class="grid grid-cols-2 gap-4"
       >
-        <div class="py-8 px-4 bg-[#18181a] rounded-xl flex hover:bg-[#3f4045] transition-all 
+        <a href={`mailto:${email}?subject=Mail from Mbugua's Portfolio`}
+          class="py-8 px-4 bg-[#18181a] rounded-xl flex hover:bg-[#3f4045] transition-all 
               duration-300 cursor-pointer items-center justify-center group 
           flex-col row-span-1  h-32 col-span-2 md:col-span-1
           md:order-0 order-2">
           <IoMail
             class="mx-auto my-auto md:translate-y-2 group-hover:translate-y-0 group-hover:scale-90
-                transition-all duration-500 group-hover:fill-orange-200 size-8 md:size-10 hidden md:block"
+                transition-all duration-500 group-hover:fill-orange-200 size-8 md:size-10"
           />
-          <span class="items-center flex md:-translate-y-2 md:opacity-0 md:scale-x-0 group-hover:opacity-100 group-hover:translate-y-0
+          <span class="items-center flex md:-translate-y-2 md:opacity-0 md:scale-x-0 
+            group-hover:opacity-100 group-hover:translate-y-0 flex-col md:flex-row
                 duration-500 transition-all group-hover:scale-x-100">
-            <p class="px-2"><span class="font-semibold px-1 text-lg text-gray-500">@</span>mwaurambugua@gmail.com</p>
-            <button class="daisy-btn daisy-btn-sm border-none z-50" onclick={copyEmailToClipbard}>
-              Copy
-            </button>
+            <p class="px-2 text-gray-400 md:text-gray-50">{email}</p>
           </span>
-        </div>
+        </a>
 
         <a href="https://www.linkedin.com/in/mwaura-mbugua/" target="_blank"
           class="p-8 bg-[#18181a] group rounded-xl flex hover:bg-[#3f4045] transition-all 
