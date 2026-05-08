@@ -1,6 +1,6 @@
 # Portfolio Website
 
-## Usag
+## Usage
 
 ```bash
 $ npm install # or pnpm install or yarn install
